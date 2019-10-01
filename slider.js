@@ -6,10 +6,18 @@ function showSlide(slideNb) {
   // hide all other images
   Array.from(slides).forEach( slide => {
     slide.style.display = "none";
+    slide.style.opacity = 0;
+    slide.classList.remove('transition');
   })
 
   // show only current slide
   slides[slideNb].style.display = "block";
+  slides[slideNb].classList.add('transition');
+  window.setTimeout( function(){
+    slides[slideNb].style.opacity = 1;
+   
+  }, 1)
+ 
 }
 
 function nextSlide(currentSlide){
@@ -19,8 +27,7 @@ function nextSlide(currentSlide){
     return currentSlide
   } else {
     return currentSlide + 1;
-  }
-  
+  }  
 }
 
 function prevSlide(currentSlide){
@@ -31,7 +38,6 @@ function prevSlide(currentSlide){
   } else {
     return currentSlide - 1;
   }
-
 }
 
 
