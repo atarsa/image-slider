@@ -50,6 +50,13 @@ function updateCircleColour(cirlces, circleNb){
   cirlces[circleNb].style.background = 'grey'
 }
 
+function changeSlidesAutomatiacally(){
+  currentSlide = nextSlide(currentSlide);
+  showSlide(currentSlide);
+  updateCircleColour(cirlces, currentSlide);
+  setTimeout(changeSlidesAutomatiacally, 5000);
+}
+
 // add event listeners 
 //for arrows press
 document.querySelector('.fa-chevron-right')
@@ -85,6 +92,7 @@ for (let i =0; i < cirlces.length; i++){
   })
 }
 
-  
+
 showSlide(0);
 updateCircleColour(cirlces, 0);
+setTimeout(changeSlidesAutomatiacally, 5000);
