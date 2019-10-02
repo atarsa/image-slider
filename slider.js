@@ -47,7 +47,7 @@ function updateCircleColour(cirlces, circleNb){
     circle.style.background = 'none';
   })
   // change background colour of the next circle  to grey
-  cirlces[circleNb].style.background = 'grey'
+  cirlces[circleNb].style.background = '#778899';
 }
 
 function changeSlidesAutomatiacally(){
@@ -83,7 +83,7 @@ for (let i =0; i < cirlces.length; i++){
       circle.style.background = 'none';
     })
     // change background colour of the clicked element to grey
-    e.target.style.background = 'grey';
+    e.target.style.background = '#778899';
     // update current slide
     let innerSlide = parseInt(e.target.dataset.id);
     currentSlide = innerSlide;
